@@ -37,6 +37,18 @@
                             padding: 6px;
                             margin-top: -2px;
                         }
+                        .signature-section { 
+                            margin-top: 100px;
+                            padding: 0 20px;
+                        }
+                        .signature-box { 
+                            border-top: 1px solid black;
+                            width: 200px;
+                            text-align: center; 
+                            padding-top: 5px;
+                            margin-top: 60px;
+                            display: inline-block;
+                        }
                         body {
                             margin: 0;
                             padding: 0;
@@ -44,6 +56,7 @@
                     </style>
 
                     <div class="header">
+                        <!-- Header with Logo and Title -->
                         <table style="width: 100%; border: 2px solid black; border-collapse: collapse;">
                             <tr>
                                 <td style="width: 40%; border-right: 1px solid black; padding: 15px; vertical-align: middle;">
@@ -101,13 +114,12 @@
                         <table class="table-bordered" style="margin-top: -2px;">
                             <thead>
                                 <tr style="background-color: #e8e8e8;">
-                                    <th style="text-align: center; width: 4%;">Sr#</th>
-                                    <th style="text-align: center; width: 23%;">Item Description</th>
-                                    <th style="text-align: center; width: 7%;">UoM</th>
-                                    <th style="text-align: center; width: 9%;">QTY</th>
-                                    <th style="text-align: center; width: 11%;">Delivery Date</th>
-                                    <th style="text-align: center; width: 9%;">Rate</th>
-                                    <th style="text-align: center; width: 11%;">Net Amount</th>
+                                    <th style="text-align: center; width: 25%;">Item Description</th>
+                                    <th style="text-align: center; width: 8%;">UoM</th>
+                                    <th style="text-align: center; width: 10%;">QTY</th>
+                                    <th style="text-align: center; width: 12%;">Delivery Date</th>
+                                    <th style="text-align: center; width: 10%;">Rate</th>
+                                    <th style="text-align: center; width: 12%;">Net Amount</th>
                                     <th style="text-align: center; width: 8%;">ALT UOM</th>
                                     <th style="text-align: center; width: 10%;">ALT UOM QTY</th>
                                 </tr>
@@ -115,7 +127,6 @@
                             <tbody>
                                 <t t-foreach="o.order_line" t-as="line">
                                     <tr>
-                                        <td style="text-align: center;"><span t-esc="line_index + 1"/></td>
                                         <td><span t-field="line.name"/></td>
                                         <td style="text-align: center;"><span t-field="line.product_uom.name"/></td>
                                         <td style="text-align: right;"><span t-esc="'{:,.3f}'.format(line.product_qty)"/></td>
@@ -128,7 +139,7 @@
                                 </t>
                                 <!-- Total Row -->
                                 <tr>
-                                    <td colspan="2"><strong>Total</strong></td>
+                                    <td><strong>Total</strong></td>
                                     <td></td>
                                     <td style="text-align: right;"><strong><span t-esc="'{:,.3f}'.format(sum(o.order_line.mapped('product_qty')))"/></strong></td>
                                     <td colspan="2"></td>
@@ -170,10 +181,20 @@
                         <div class="footer" style="font-family: 'Arial', sans-serif;">
                             <t t-if="page == topage">
                                 <div style="text-align: center; margin: 20px 0; white-space: nowrap;">
-                                    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Prepared By</span>
-                                    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Checked By</span>
-                                    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Approved By</span>
-                                </div>
+
+    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">
+        Prepared By
+    </span>
+
+    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">
+        Checked By
+    </span>
+
+    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">
+        Approved By
+    </span>
+
+</div>
                             </t>
                             <div class="row" style="font-size: 11px;">
                                 <div class="col-12 text-right">Page <span class="page"/> of <span class="topage"/></div>
@@ -190,40 +211,16 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
                     <style>
-                        .table-bordered { 
-                            border: 2px solid black !important; 
-                            border-collapse: collapse; 
-                            width: 100%; 
-                        }
-                        .table-bordered th, .table-bordered td { 
-                            border: 1px solid black !important; 
-                            padding: 8px 10px; 
-                            vertical-align: middle; 
-                        }
-                        .header-title { 
-                            background-color: #000; 
-                            color: #fff; 
-                            padding: 10px; 
-                            text-align: center; 
-                            font-weight: bold; 
-                            font-size: 16px; 
-                            letter-spacing: 2px;
-                        }
-                        .section-header { 
-                            background-color: #e8e8e8; 
-                            font-weight: bold; 
-                            text-align: center; 
-                            padding: 10px;
-                            border-bottom: 1px solid black; 
-                            letter-spacing: 0.5px;
-                        }
-                        body {
-                            margin: 0;
-                            padding: 0;
-                        }
+                        .table-bordered { border: 1px solid black !important; border-collapse: collapse; width: 100%; }
+                        .table-bordered th, .table-bordered td { border: 1px solid black !important; padding: 8px 10px; vertical-align: middle; }
+                        .header-title { background-color: #000; color: #fff; padding: 12px; text-align: center; font-weight: bold; font-size: 18px; letter-spacing: 1px; }
+                        .section-header { background-color: #f2f2f2; font-weight: bold; text-align: center; border-bottom: 1px solid black; padding: 8px; letter-spacing: 0.5px; }
+                        .signature-section { margin-top: 50px; }
+                        .signature-box { border-top: 1px solid black; width: 200px; text-align: center; display: inline-block; margin-right: 50px; }
                     </style>
 
                     <div class="header">
+                        <!-- Header with Logo and Title -->
                         <table style="width: 100%; border: 2px solid black; border-collapse: collapse;">
                             <tr>
                                 <td style="width: 40%; border-right: 1px solid black; padding: 15px; vertical-align: middle;">
@@ -243,38 +240,37 @@
                     <div class="page" style="font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.3px; color: #333;">
 
                         <!-- Buyer/Supplier Section -->
-                        <table class="table-bordered" style="margin-top: -2px;">
+                        <table class="table-bordered" style="margin-top: 20px;">
                             <tr>
                                 <th class="section-header" style="width: 50%;">Buyer</th>
                                 <th class="section-header" style="width: 50%;">Supplier</th>
                             </tr>
                             <tr>
                                 <td style="padding: 12px;">
-                                    <div style="margin-bottom: 8px;"><strong><span t-field="o.company_id.name"/></strong></div>
-                                    <div style="margin-bottom: 4px;"><span t-field="o.company_id.street"/><t t-if="o.company_id.street2">, <span t-field="o.company_id.street2"/></t></div>
-                                    <div style="margin-bottom: 8px;"><t t-if="o.company_id.city"><span t-field="o.company_id.city"/></t><t t-if="o.company_id.zip"> - <span t-field="o.company_id.zip"/></t></div>
-                                    <div style="margin-bottom: 4px;"><strong>Phone No: </strong><span t-field="o.company_id.phone"/></div>
-                                    <div style="margin-bottom: 4px;"><strong>STRN: </strong><span t-field="o.company_id.vat"/></div>
-                                    <div style="margin-bottom: 4px;"><strong>NTN: </strong><span t-field="o.company_id.vat"/></div>
+                                    <div style="margin-bottom: 8px;"><strong t-field="o.company_id.name"/></div>
+                                    <div style="margin-bottom: 4px;"><span t-field="o.company_id.street"/> <span t-field="o.company_id.street2"/></div>
+                                    <div style="margin-bottom: 8px;"><span t-field="o.company_id.city"/> <span t-field="o.company_id.zip"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>Phone No: </strong> <span t-field="o.company_id.phone"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>STRN: </strong> <span t-field="o.company_id.vat"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>NTN: </strong> <span t-field="o.company_id.vat"/></div>
                                 </td>
                                 <td style="padding: 12px;">
-                                    <div style="margin-bottom: 8px;"><strong><span t-field="o.partner_id.name"/></strong></div>
-                                    <div style="margin-bottom: 4px;"><span t-field="o.partner_id.street"/><t t-if="o.partner_id.street2">, <span t-field="o.partner_id.street2"/></t></div>
-                                    <div style="margin-bottom: 8px;"><t t-if="o.partner_id.city"><span t-field="o.partner_id.city"/></t><t t-if="o.partner_id.zip"> - <span t-field="o.partner_id.zip"/></t></div>
-                                    <div style="margin-bottom: 4px;"><strong>Phone No: </strong><span t-field="o.partner_id.phone"/></div>
-                                    <div style="margin-bottom: 4px;"><strong>STRN: </strong><span t-field="o.partner_id.vat"/></div>
-                                    <div style="margin-bottom: 4px;"><strong>NTN: </strong><span t-field="o.partner_id.vat"/></div>
+                                    <div style="margin-bottom: 8px;"><strong t-field="o.partner_id.name"/></div>
+                                    <div style="margin-bottom: 4px;"><span t-field="o.partner_id.street"/> <span t-field="o.partner_id.street2"/></div>
+                                    <div style="margin-bottom: 8px;"><span t-field="o.partner_id.city"/> <span t-field="o.partner_id.zip"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>Phone no: </strong> <span t-field="o.partner_id.phone"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>STRN: </strong> <span t-field="o.partner_id.vat"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>NTN: </strong> <span t-field="o.partner_id.vat"/></div>
                                     <div style="margin-bottom: 4px;"><strong>CNIC: </strong><span t-field="o.partner_id.cnic"/></div>
-                                    <div style="margin-bottom: 4px;"><strong>Payment Terms: </strong><span t-field="o.payment_term_id.name"/></div>
+                                    <div style="margin-bottom: 4px;"><strong>Payment Terms: </strong> <span t-field="o.payment_term_id.name"/></div>
                                 </td>
                             </tr>
                         </table>
 
                         <!-- Items Table -->
-                        <table class="table-bordered" style="margin-top: -2px;">
+                        <table class="table-bordered" style="margin-top: 20px;">
                             <thead>
-                                <tr style="background-color: #e8e8e8;">
-                                    <th style="text-align: center; width: 4%;">Sr#</th>
+                                <tr style="background-color: #f2f2f2;">
                                     <th style="text-align: center;">Item Description</th>
                                     <th style="text-align: center;">UoM</th>
                                     <th style="text-align: center;">QTY</th>
@@ -282,40 +278,39 @@
                                     <th style="text-align: center;">Rate</th>
                                     <th style="text-align: center;">Net Amount</th>
                                     <th style="text-align: center;">Sales Tax Amount</th>
-                                    <th style="text-align: center;">Sales Tax %</th>
+                                    <th style="text-align: center;">Sales tax %</th>
                                     <th style="text-align: center;">Gross Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-foreach="o.order_line" t-as="line">
                                     <tr>
-                                        <td style="text-align: center;"><span t-esc="line_index + 1"/></td>
                                         <td><span t-field="line.name"/></td>
-                                        <td style="text-align: center;"><span t-field="line.product_uom.name"/></td>
-                                        <td style="text-align: right;"><span t-field="line.product_qty"/></td>
-                                        <td style="text-align: center;"><span t-field="line.date_planned" t-options='{"widget": "date"}'/></td>
-                                        <td style="text-align: right;"><span t-field="line.price_unit"/></td>
-                                        <td style="text-align: right;"><span t-field="line.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
-                                        <td style="text-align: right;"><span t-field="line.price_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
-                                        <td style="text-align: center;">
+                                        <td class="text-center"><span t-field="line.product_uom.name"/></td>
+                                        <td class="text-end"><span t-field="line.product_qty"/></td>
+                                        <td class="text-center"><span t-field="line.date_planned" t-options='{"widget": "date"}'/></td>
+                                        <td class="text-end"><span t-field="line.price_unit"/></td>
+                                        <td class="text-end"><span t-field="line.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                        <td class="text-end"><span t-field="line.price_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                        <td class="text-center">
                                             <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
                                         </td>
-                                        <td style="text-align: right;"><span t-field="line.price_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                        <td class="text-end"><span t-field="line.price_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
                                     </tr>
                                 </t>
                                 <tr style="font-weight: bold;">
-                                    <td colspan="3">Total</td>
-                                    <td style="text-align: right;"><span t-esc="sum(o.order_line.mapped('product_qty'))"/></td>
+                                    <td colspan="2">Total</td>
+                                    <td class="text-end"><span t-esc="sum(o.order_line.mapped('product_qty'))"/></td>
                                     <td colspan="2"></td>
-                                    <td style="text-align: right;"><span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
-                                    <td style="text-align: right;"><span t-field="o.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                    <td class="text-end"><span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                    <td class="text-end"><span t-field="o.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
                                     <td></td>
-                                    <td style="text-align: right;"><span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                    <td class="text-end"><span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <div style="border: 2px solid black; padding: 6px; margin-top: -2px; font-weight: bold;">
+                        <div style="border: 1px solid black; padding: 5px; margin-top: -1px; font-weight: bold;">
                             <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
                         </div>
 
@@ -341,10 +336,20 @@
                         <div class="footer" style="font-family: 'Arial', sans-serif;">
                             <t t-if="page == topage">
                                 <div style="text-align: center; margin: 20px 0; white-space: nowrap;">
-                                    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Prepared By</span>
-                                    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Checked By</span>
-                                    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Approved By</span>
-                                </div>
+
+    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">
+        Prepared By
+    </span>
+
+    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">
+        Checked By
+    </span>
+
+    <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">
+        Approved By
+    </span>
+
+</div>
                             </t>
                             <div class="row" style="font-size: 11px;">
                                 <div class="col-12 text-right">Page <span class="page"/> of <span class="topage"/></div>
