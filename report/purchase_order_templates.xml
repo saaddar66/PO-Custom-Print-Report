@@ -40,6 +40,7 @@
                         body {
                             margin: 0;
                             padding: 0;
+                            letter-spacing: 0.3px;
                         }
                     </style>
 
@@ -98,7 +99,7 @@
                         </div>
 
                         <!-- Items Table -->
-                        <table class="table-bordered" style="margin-top: -2px;">
+                        <table class="table-bordered" style="margin-top: -2px;table-layout: fixed; ">
                             <thead>
                                 <tr style="background-color: #e8e8e8;">
                                     <th style="text-align: center; width: 4%;">Sr#</th>
@@ -116,7 +117,7 @@
                                 <t t-foreach="o.order_line" t-as="line">
                                     <tr>
                                         <td style="text-align: center;"><span t-esc="line_index + 1"/></td>
-                                        <td><span t-field="line.name"/></td>
+                                        <td style="word-wrap: break-word; overflow-wrap: break-word; white-space: normal; word-spacing: 2px; line-height: 1.8;"><span t-field="line.name"/></td>
                                         <td style="text-align: center;"><span t-field="line.product_uom.name"/></td>
                                         <td style="text-align: right;"><span t-esc="'{:,.3f}'.format(line.product_qty)"/></td>
                                         <td style="text-align: center;"><span t-field="line.date_planned" t-options='{"widget": "date", "format": "dd.MM.yyyy"}'/></td>
@@ -145,12 +146,12 @@
 
                         <!-- Shipping Schedule Notice -->
                         <div class="info-box" style="font-weight: bold; text-transform: uppercase;">
-                            FOR SHIPPING SCHEDULE PLEASE KEEP IN TOUCH WITH SUPPLYCHAIN TEAM
+                            FOR SHIPPING SCHEDULE PLEASE KEEP IN TOUCH WITH SUPPLY-CHAIN TEAM
                         </div>
 
-                        <div style="margin-top: 20px; font-size: 11px; line-height: 1.4;">
+                        <div style="margin-top: 20px; border:2px solid black; padding: 10px; font-size: 11px; line-height: 1.4; letter-spacing: 0.3px;">
                             <div style="font-weight: bold; text-decoration: underline; margin-bottom: 5px;">Terms and Conditions:</div>
-                            <div style="padding-left: 15px;">
+                            <div style="padding-left: 15px; letter-spacing: 0.3px;">
                                 1. Free days for every shipment must be at least 21 Days.<br/>
                                 2. This Purchase Order (PO) is subject to the terms and conditions incorporated herein after, which the vendor hereby agrees.<br/>
                                 3. PO number should be mentioned on all delivery orders, invoices &amp; other correspondence.<br/>
@@ -168,14 +169,14 @@
                         </div>
 
                         <div class="footer" style="font-family: 'Arial', sans-serif;">
-                            <t t-if="page == topage">
+                            <t t-if="page == topage and o.state != 'purchase'">
                                 <div style="text-align: center; margin: 20px 0; white-space: nowrap;">
                                     <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Prepared By</span>
                                     <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Checked By</span>
                                     <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Approved By</span>
                                 </div>
                             </t>
-                            <div class="row" style="font-size: 11px;">
+                            <div class="row" style="font-size: 11px; text-align: right;">
                                 <div class="col-12 text-right">Page <span class="page"/> of <span class="topage"/></div>
                             </div>
                         </div>
@@ -271,7 +272,7 @@
                         </table>
 
                         <!-- Items Table -->
-                        <table class="table-bordered" style="margin-top: -2px;">
+                        <table class="table-bordered" style="margin-top: -2px;  table-layout: fixed; ">
                             <thead>
                                 <tr style="background-color: #e8e8e8;">
                                     <th style="text-align: center; width: 4%;">Sr#</th>
@@ -290,7 +291,7 @@
                                 <t t-foreach="o.order_line" t-as="line">
                                     <tr>
                                         <td style="text-align: center;"><span t-esc="line_index + 1"/></td>
-                                        <td><span t-field="line.name"/></td>
+                                        <td style="word-wrap: break-word; overflow-wrap: break-word; white-space: normal; line-height: 1.8;"><span t-field="line.name"/></td>
                                         <td style="text-align: center;"><span t-field="line.product_uom.name"/></td>
                                         <td style="text-align: right;"><span t-field="line.product_qty"/></td>
                                         <td style="text-align: center;"><span t-field="line.date_planned" t-options='{"widget": "date"}'/></td>
@@ -319,7 +320,7 @@
                             <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
                         </div>
 
-                        <div style="margin-top: 20px; font-size: 11px; line-height: 1.4;">
+                        <div style="margin-top: 20px; border:2px solid black; padding: 10px; font-size: 11px; line-height: 1.4; line-width: 1.4; letter-spacing: 0.53px">
                             <div style="font-weight: bold; text-decoration: underline; margin-bottom: 5px;">Terms and Conditions:</div>
                             <div style="padding-left: 15px;">
                                 1. Free days for every shipment must be at least 21 Days.<br/>
@@ -339,14 +340,14 @@
                         </div>
 
                         <div class="footer" style="font-family: 'Arial', sans-serif;">
-                            <t t-if="page == topage">
+                            <t t-if="page == topage and o.state != 'purchase'">
                                 <div style="text-align: center; margin: 20px 0; white-space: nowrap;">
                                     <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Prepared By</span>
                                     <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Checked By</span>
                                     <span style="display: inline-block; width: 100px; text-align: center; margin: 0 25px; font-size: 11px; border-top: 1px solid black; padding-top: 3px;">Approved By</span>
                                 </div>
                             </t>
-                            <div class="row" style="font-size: 11px;">
+                            <div class="row" style="font-size: 11px; text-align: right;">
                                 <div class="col-12 text-right">Page <span class="page"/> of <span class="topage"/></div>
                             </div>
                         </div>
