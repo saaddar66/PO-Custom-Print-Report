@@ -6,7 +6,7 @@
     'description': """
         Adds custom Purchase Order reports like "Import" type.
     """,
-    'depends': ['purchase'],
+    'depends': ['purchase', 'purchase_order_type'],
     'data': [
         'views/res_partner.xml',
         'report/purchase_order_reports.xml',

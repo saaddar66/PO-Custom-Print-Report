@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Import PO Report -->
+
     <record id="action_report_purchase_order_import" model="ir.actions.report">
         <field name="name">Import PO</field>
         <field name="model">purchase.order</field>
@@ -8,11 +8,8 @@
         <field name="report_name">print_po_type.report_purchase_order_import</field>
         <field name="report_file">print_po_type.report_purchase_order_import</field>
         <field name="print_report_name">'Purchase Order - %s' % (object.name)</field>
-        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
-        <field name="binding_type">report</field>
     </record>
- 
-    <!-- Local PO Report -->
+
     <record id="action_report_purchase_order_local" model="ir.actions.report">
         <field name="name">Local PO</field>
         <field name="model">purchase.order</field>
@@ -20,7 +17,18 @@
         <field name="report_name">print_po_type.report_purchase_order_local</field>
         <field name="report_file">print_po_type.report_purchase_order_local</field>
         <field name="print_report_name">'Purchase Order - %s' % (object.name)</field>
+    </record>
+
+    <record id="action_purchase_order_print_conditional" model="ir.actions.server">
+        <field name="name">Print PO</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
         <field name="binding_model_id" ref="purchase.model_purchase_order"/>
         <field name="binding_type">report</field>
+        <field name="state">code</field>
+        <field name="code">
+if record:
+    action = record.action_print_purchase_order_type()
+        </field>
     </record>
+
 </odoo>
