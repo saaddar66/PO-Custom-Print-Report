@@ -22,7 +22,6 @@
                             text-align: center; 
                             font-weight: bold; 
                             font-size: 16px; 
-                            letter-spacing: 2px;
                         }
                         .section-header { 
                             background-color: #e8e8e8; 
@@ -30,7 +29,6 @@
                             text-align: center; 
                             padding: 10px;
                             border-bottom: 1px solid black; 
-                            letter-spacing: 0.5px;
                         }
                         .info-box {
                             border: 2px solid black;
@@ -40,7 +38,6 @@
                         body {
                             margin: 0;
                             padding: 0;
-                            letter-spacing: 0.3px;
                         }
                     </style>
 
@@ -61,7 +58,7 @@
                         </table>
                     </div>
 
-                    <div class="page" style="font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.3px; color: #333;">
+                    <div class="page" style="font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.6; color: #333;">
 
                         <!-- Buyer/Supplier Section -->
                         <table class="table-bordered" style="margin-top: -2px;">
@@ -103,12 +100,12 @@
                             <thead>
                                 <tr style="background-color: #e8e8e8;">
                                     <th style="text-align: center; width: 4%;">Sr#</th>
-                                    <th style="text-align: center; width: 23%;">Item Description</th>
-                                    <th style="text-align: center; width: 7%;">UoM</th>
-                                    <th style="text-align: center; width: 9%;">QTY</th>
-                                    <th style="text-align: center; width: 11%;">Delivery Date</th>
+                                    <th style="text-align: center; width: 35%;">Item Description</th>
+                                    <th style="text-align: center; width: 5%;">UoM</th>
+                                    <th style="text-align: center; width: 8%;">QTY</th>
+                                    <th style="text-align: center; width: 9%;">Delivery Date</th>
                                     <th style="text-align: center; width: 9%;">Rate</th>
-                                    <th style="text-align: center; width: 11%;">Net Amount</th>
+                                    <th style="text-align: center; width: 12%;">Net Amount</th>
                                     <th style="text-align: center; width: 8%;">ALT UOM</th>
                                     <th style="text-align: center; width: 10%;">ALT UOM QTY</th>
                                 </tr>
@@ -149,22 +146,22 @@
                             FOR SHIPPING SCHEDULE PLEASE KEEP IN TOUCH WITH SUPPLY-CHAIN TEAM
                         </div>
 
-                        <div style="margin-top: 20px; border:2px solid black; padding: 10px; font-size: 11px; line-height: 1.4; letter-spacing: 0.3px;">
+                        <div style="margin-top: 20px; border:2px solid black; padding: 10px; font-size: 11px; line-height: 1.4;">
                             <div style="font-weight: bold; text-decoration: underline; margin-bottom: 5px;">Terms and Conditions:</div>
-                            <div style="padding-left: 15px; letter-spacing: 0.3px; font-family: 'Arial', sans-serif; font-size: 14px;">
-                                1. Free days for every shipment must be at least 21 Days.<br/>
-                                2. This Purchase Order (PO) is subject to the terms and conditions incorporated herein after, which the vendor hereby agrees.<br/>
-                                3. PO number should be mentioned on all delivery orders, invoices &amp; other correspondence.<br/>
-                                4. Goods/Services should meet exact specifications, brands, country of origin and delivery dates as specified/agreed.<br/>
-                                5. Payments will be made subject to acceptance of goods.<br/>
-                                6. Supplier shall be responsible for handling and packaging of goods.<br/>
-                                7. Invalid/expired goods shall be returned without any payment or demand for replacement.<br/>
-                                8. Commercial invoice, certificate of analysis (COA) and delivery challan should be provided to us at the time of delivery of goods/services.<br/>
-                                9. Quantity and Description in Delivery Challan / Goods Receipt Challan (SRC) and in invoice including rate must be as per PO.<br/>
-                                10. All invoices will be subject to the approval of ABI.<br/>
-                                11. Delivery shall be as per dates mentioned in PO.<br/>
-                                12. All the Suppliers/Contractors/Service Providers shall comply with the ABI OHS policies and procedure.<br/>
-                                13. Please check PO details thoroughly, and in case of any query, please raise your concerns immediately.
+                            <div style="padding-left: 15px; font-family: 'Arial', sans-serif; font-size: 14px;">
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>1.</strong> Free days for every shipment must be at least 21 Days.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>2.</strong> This Purchase Order (PO) is subject to the terms and conditions incorporated herein after, which the vendor hereby agrees.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>3.</strong> PO number should be mentioned on all delivery orders, invoices &amp; other correspondence.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>4.</strong> Goods/Services should meet exact specifications, brands, country of origin and delivery dates as specified/agreed.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>5.</strong> Payments will be made subject to acceptance of goods.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>6.</strong> Supplier shall be responsible for handling and packaging of goods.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>7.</strong> Invalid/expired goods shall be returned without any payment or demand for replacement.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>8.</strong> Commercial invoice, certificate of analysis (COA) and delivery challan should be provided to us at the time of delivery of goods/services.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>9.</strong> Quantity and Description in Delivery Challan / Goods Receipt Challan (SRC) and in invoice including rate must be as per PO.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>10.</strong> All invoices will be subject to the approval of ABI.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>11.</strong> Delivery shall be as per dates mentioned in PO.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>12.</strong> All the Suppliers/Contractors/Service Providers shall comply with the ABI OHS policies and procedure.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>13.</strong> Please check PO details thoroughly, and in case of any query, please raise your concerns immediately.</p>
                             </div>
                         </div>
 
@@ -208,7 +205,6 @@
                             text-align: center; 
                             font-weight: bold; 
                             font-size: 16px; 
-                            letter-spacing: 2px;
                         }
                         .section-header { 
                             background-color: #e8e8e8; 
@@ -216,7 +212,6 @@
                             text-align: center; 
                             padding: 10px;
                             border-bottom: 1px solid black; 
-                            letter-spacing: 0.5px;
                         }
                         body {
                             margin: 0;
@@ -241,7 +236,7 @@
                         </table>
                     </div>
 
-                    <div class="page" style="font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.6; letter-spacing: 0.3px; color: #333;">
+                    <div class="page" style="font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.6; color: #333;">
 
                         <!-- Buyer/Supplier Section -->
                         <table class="table-bordered" style="margin-top: -2px;">
@@ -276,15 +271,15 @@
                             <thead>
                                 <tr style="background-color: #e8e8e8;">
                                     <th style="text-align: center; width: 4%;">Sr#</th>
-                                    <th style="text-align: center;">Item Description</th>
-                                    <th style="text-align: center;">UoM</th>
-                                    <th style="text-align: center;">QTY</th>
-                                    <th style="text-align: center;">Delivery Date</th>
-                                    <th style="text-align: center;">Rate</th>
-                                    <th style="text-align: center;">Net Amount</th>
-                                    <th style="text-align: center;">Sales Tax Amount</th>
-                                    <th style="text-align: center;">Sales Tax %</th>
-                                    <th style="text-align: center;">Gross Amount</th>
+                                    <th style="text-align: center; width: 26%;">Item Description</th>
+                                    <th style="text-align: center; width: 5%;">UoM</th>
+                                    <th style="text-align: center; width: 7%;">QTY</th>
+                                    <th style="text-align: center; width: 9%;">Delivery Date</th>
+                                    <th style="text-align: center; width: 9%;">Rate</th>
+                                    <th style="text-align: center; width: 11%;">Net Amount</th>
+                                    <th style="text-align: center; width: 11%;">Sales Tax Amount</th>
+                                    <th style="text-align: center; width: 7%;">Sales Tax %</th>
+                                    <th style="text-align: center; width: 11%;">Gross Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -320,22 +315,22 @@
                             <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
                         </div>
 
-                        <div style="margin-top: 20px; border:2px solid black; padding: 10px; font-size: 11px; line-height: 1.4; line-width: 1.4; letter-spacing: 0.53px">
+                        <div style="margin-top: 20px; border:2px solid black; padding: 10px; font-size: 11px; line-height: 1.4;">
                             <div style="font-weight: bold; text-decoration: underline; margin-bottom: 5px;">Terms and Conditions:</div>
-                            <div style="padding-left: 15px; font-family: 'Arial', sans-serif; font size: 14px;">
-                                1. Free days for every shipment must be at least 21 Days.<br/>
-                                2. This Purchase Order (PO) is subject to the terms and conditions incorporated herein after, which the vendor hereby agrees.<br/>
-                                3. PO number should be mentioned on all delivery orders, invoices &amp; other correspondence.<br/>
-                                4. Goods/Services should meet exact specifications, brands, country of origin and delivery dates as specified/agreed.<br/>
-                                5. Payments will be made subject to acceptance of goods.<br/>
-                                6. Supplier shall be responsible for handling and packaging of goods.<br/>
-                                7. Invalid/expired goods shall be returned without any payment or demand for replacement.<br/>
-                                8. Commercial invoice, certificate of analysis (COA) and delivery challan should be provided to us at the time of delivery of goods/services.<br/>
-                                9. Quantity and Description in Delivery Challan / Goods Receipt Challan (SRC) and in invoice including rate must be as per PO.<br/>
-                                10. All invoices will be subject to the approval of ABI.<br/>
-                                11. Delivery shall be as per dates mentioned in PO.<br/>
-                                12. All the Suppliers/Contractors/Service Providers shall comply with the ABI OHS policies and procedure.<br/>
-                                13. Please check PO details thoroughly, and in case of any query, please raise your concerns immediately.
+                            <div style="padding-left: 15px; font-family: 'Arial', sans-serif; font-size: 14px;">
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>1.</strong> Free days for every shipment must be at least 21 Days.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>2.</strong> This Purchase Order (PO) is subject to the terms and conditions incorporated herein after, which the vendor hereby agrees.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>3.</strong> PO number should be mentioned on all delivery orders, invoices &amp; other correspondence.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>4.</strong> Goods/Services should meet exact specifications, brands, country of origin and delivery dates as specified/agreed.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>5.</strong> Payments will be made subject to acceptance of goods.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>6.</strong> Supplier shall be responsible for handling and packaging of goods.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>7.</strong> Invalid/expired goods shall be returned without any payment or demand for replacement.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>8.</strong> Commercial invoice, certificate of analysis (COA) and delivery challan should be provided to us at the time of delivery of goods/services.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>9.</strong> Quantity and Description in Delivery Challan / Goods Receipt Challan (SRC) and in invoice including rate must be as per PO.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>10.</strong> All invoices will be subject to the approval of ABI.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>11.</strong> Delivery shall be as per dates mentioned in PO.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>12.</strong> All the Suppliers/Contractors/Service Providers shall comply with the ABI OHS policies and procedure.</p>
+                                <p style="margin: 0 0 6px 0; line-height: 1.4;"><strong>13.</strong> Please check PO details thoroughly, and in case of any query, please raise your concerns immediately.</p>
                             </div>
                         </div>
 
